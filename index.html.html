@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sarth Gurav | Portfolio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;600;800&display=swap" rel="stylesheet">
+
+<style>
+html { scroll-behavior:smooth; }
+
+body{
+  margin:0;
+  font-family:Manrope, sans-serif;
+  color:#e8ecf1;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(21, 68, 87, 0.27), transparent 40%),
+    radial-gradient(circle at 80% 30%, rgba(167,139,250,0.15), transparent 40%),
+    linear-gradient(180deg, #0b0f1a, #020617 70%);
+  animation: pageFade 1.2s ease;
+}
+
+@keyframes pageFade{
+  from{opacity:0}
+  to{opacity:1}
+}
+
+/* NAV */
+nav{
+  display:flex;
+  justify-content:space-between;
+  padding:18px 40px;
+  background:rgba(0,0,0,.35);
+  backdrop-filter: blur(10px);
+  position:sticky;
+  top:0;
+}
+nav a{
+  color:#cbd5e1;
+  text-decoration:none;
+  margin-left:20px;
+  font-size:14px;
+}
+
+/* HERO */
+.hero{
+  max-width:1100px;
+  margin:90px auto;
+  display:grid;
+  grid-template-columns:1.1fr .9fr;
+  gap:40px;
+  padding:20px;
+  align-items:center;
+}
+
+.hero h1{ font-size:44px; margin:0; }
+
+.gradient{
+  background: linear-gradient(90deg,#38bdf8,#a78bfa,#22c55e);
+  -webkit-background-clip:text;
+  color:transparent;
+  filter: drop-shadow(0 0 12px rgba(99,102,241,.25));
+}
+
+.tagline{ font-size:18px; opacity:.85; margin-top:10px; }
+
+.btn{
+  display:inline-block;
+  margin-top:24px;
+  padding:12px 20px;
+  border-radius:10px;
+  background:linear-gradient(90deg,#38bdf8,#6366f1);
+  color:white;
+  text-decoration:none;
+  font-weight:600;
+  transition:.25s;
+}
+.btn:hover{
+  transform:translateY(-3px);
+  box-shadow:0 12px 30px rgba(99,102,241,.35);
+}
+
+/* PROFILE CARD */
+.profile-card{
+  background:rgba(17,24,39,.75);
+  backdrop-filter: blur(12px);
+  border-radius:20px;
+  padding:30px;
+  text-align:center;
+  border:1px solid rgba(148,163,184,.15);
+  box-shadow:0 20px 60px rgba(0,0,0,.5);
+  animation: float 6s ease-in-out infinite;
+}
+
+.profile-card img{
+  width:160px;
+  height:160px;
+  border-radius:50%;
+  object-fit:cover;
+  border:4px solid #38bdf8;
+}
+
+@keyframes float{
+  0%,100%{transform:translateY(0)}
+  50%{transform:translateY(-12px)}
+}
+
+/* SECTIONS */
+.section{
+  max-width:1100px;
+  margin:70px auto;
+  padding:40px;
+  background:rgba(15,23,42,.75);
+  backdrop-filter: blur(12px);
+  border-radius:20px;
+  border:1px solid rgba(148,163,184,.15);
+}
+
+/* SCROLL REVEAL ADD */
+.reveal{
+  opacity:0;
+  transform:translateY(40px);
+  transition:.8s ease;
+}
+.reveal.active{
+  opacity:1;
+  transform:translateY(0);
+}
+
+h2{
+  margin-top:0;
+  font-size:26px;
+  color:#a5b4fc;
+}
+
+/* SKILLS */
+.skills{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
+  gap:16px;
+}
+.skill{
+  background:rgba(2,6,23,.7);
+  padding:16px;
+  border-radius:12px;
+  text-align:center;
+  border:1px solid rgba(148,163,184,.18);
+  transition:.25s;
+}
+.skill:hover{
+  border-color:#38bdf8;
+  transform:translateY(-4px);
+}
+
+/* PROJECTS */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:26px;
+}
+
+.card{
+  background:rgba(2,6,23,.7);
+  border-radius:16px;
+  overflow:hidden;
+  border:1px solid rgba(235,246,247,.38);
+  transition:.3s;
+}
+.card:hover{ transform:translateY(-8px); }
+
+.card img{
+  width:100%;
+  height:170px;
+  object-fit:cover;
+}
+
+.card-body{ padding:18px; }
+
+/* PROJECT BUTTONS ADD */
+.project-links a{
+  display:inline-block;
+  margin-top:8px;
+  margin-right:8px;
+  padding:6px 10px;
+  border-radius:8px;
+  background:#111827;
+  color:#38bdf8;
+  text-decoration:none;
+  font-size:13px;
+}
+
+/* CONTACT LINKS ADD */
+#contact a{
+  color:#38bdf8;
+  text-decoration:none;
+  font-weight:600;
+}
+
+/* FOOTER */
+footer{
+  text-align:center;
+  padding:50px;
+  opacity:.6;
+}
+
+@media(max-width:800px){
+  .hero{grid-template-columns:1fr}
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+  <div><b> SG </b></div>
+  <div>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero reveal">
+  <div>
+    <h1>Hi, I'm <span class="gradient">Sarth Gurav</span></h1>
+    <div class="tagline">BCA Student • Developer • AI Builder</div>
+
+    <p>I build practical software and AI projects and prepare for internships and real-world tech roles.</p>
+
+    <!-- FIXED PATH -->
+    <a class="btn" href="Sarth cv.pdf">view resume</a>
+  </div>
+
+  <div class="profile-card">
+    <!-- FIXED PATH -->
+    <img src="photo.jpeg">
+    <h3>Sarth Gurav</h3>
+    <p>Open to Internships</p>
+  </div>
+</div>
+
+<div class="section reveal" id="about">
+  <h2>About Me</h2>
+  Motivated BCA student focused on web development with foundational programming skills and strong learning agility, actively building practical projects and seeking internship exposure.
+</div>
+
+<div class="section reveal" id="skills">
+  <h2>Skills</h2>
+  <div class="skills">
+    <div class="skill">Python</div>
+    <div class="skill">DBMS(learning stage)</div>
+    <div class="skill">HTML/CSS</div>
+    <div class="skill">AI Tools</div>
+    <div class="skill">Problem Solving</div>
+    <div class="skill">effective Communication</div>
+    <div class="skill">Leadership and teamwork qualities</div>
+  </div>
+</div>
+
+<div class="section reveal" id="projects">
+  <h2>Projects</h2>
+
+  <div class="grid">
+
+    <div class="card">
+      <img src="med.png">
+      <div class="card-body">
+        <b>Medication Reminder App</b>
+        <p>Python Tkinter reminder system</p>
+
+        <div class="project-links">
+          <a href="https://github.com/yourusername/medication-app" target="_blank">GitHub</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="section reveal" id="contact">
+  <h2>Contact</h2>
+
+  Email:
+  <a href="mailto:sarthgurav8@gmail.com">sarthgurav8@gmail.com</a><br><br>
+
+  GitHub:
+  <a href="https://github.com/yourusername" target="_blank">github.com/yourusername</a><br><br>
+
+  LinkedIn:
+  <a href="https://www.linkedin.com/in/sarth-gurav7607" target="_blank">
+    linkedin.com/in/sarth-gurav7607
+  </a>
+</div>
+
+<footer>
+© 𝟐𝟎𝟐𝟔 𝑺𝒂𝒓𝒕𝒉 𝑮𝒖𝒓𝒂𝒗 𝑷𝒐𝒓𝒕𝒇𝒐𝒍𝒊𝒐
+</footer>
+
+<!-- SCROLL SCRIPT ADD -->
+<script>
+function revealOnScroll(){
+  const reveals=document.querySelectorAll(".reveal");
+  reveals.forEach(el=>{
+    if(el.getBoundingClientRect().top < window.innerHeight-80){
+      el.classList.add("active");
+    }
+  });
+}
+window.addEventListener("scroll",revealOnScroll);
+revealOnScroll();
+</script>
+
+</body>
+</html>
